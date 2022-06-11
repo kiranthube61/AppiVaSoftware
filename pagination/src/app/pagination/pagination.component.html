@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+      background-color: #ddd;
+    }
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+  </style>
+</head>
+
+<body>
+
+  <h1>User List</h1>
+
+  <table id="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let data of arrayToBind">
+      <td>{{data.company}}</td>
+      <td>{{data.contact}}</td>
+      <td>{{data.country}}</td>
+    </tr>
+  </table>
+
+  <br>
+  <div class="pagination">
+   <a >&laquo;</a>
+    <a *ngFor="let data of pageNumberArray" (click)="pageNumber(data)" >{{data}} </a>
+    <a >&raquo;</a>
+    
+    
+  </div>
+</body>
+
+</html>

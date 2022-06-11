@@ -1,0 +1,9 @@
+<div class="container">
+    <strong>AppiVa Soft Assignment</strong>
+    <h1>Dollar to Rupees</h1>
+    <div style="text-align: center">
+      <span><i class="fa fa-dollar"></i></span><input #Mydata type="text" placeholder="$" name="currency">
+         <button (click)="Send(Mydata.value)">Dollar to Rupees</button>
+        <h1>{{rupee |currency:"₹"}}</h1>
+      </div>
+</div>
